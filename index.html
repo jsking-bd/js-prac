@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>International Numbers &amp; Currency</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>International Numbers &amp; Currency</h1>
+    </header>
+        
+    <script>
+        let number = 13456782.1263546464;
+        
+        console.group('numbers');
+        console.log(new Intl.NumberFormat('en-CA', { style: 'decimal'}).format(number));
+        console.log(new Intl.NumberFormat('fr-CA', { style: 'decimal'}).format(number));
+        console.groupEnd('numbers');
+        
+        console.group('currency');
+        console.log(new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'BDT', useGrouping: true }).format(number));
+        // expected output: "$123,456.79"
+        
+        
+//        let num = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' })
+//        num.format(number);
+        
+        
+        console.log(new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(number));
+        // expected output: "£123,456.79"
+        
+        console.log(new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(number));
+        // expected output: "123.456,79 €"
+
+        // the Japanese yen doesn't use a minor unit
+        console.log(new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(number));
+        // expected output: "￥123,457"
+        console.groupEnd('currency');
+
+        // limit to three significant digits
+        console.log(new Intl.NumberFormat('en-BD',{ style: 'decimal'}).format(number));
+        // expected output: "1,23,000"
+        console.log(new Intl.NumberFormat('en-BD', { style: 'currency', currency: 'BDT', useGrouping: true }).format(number));
+        // expected output: "1,23,000"
+        console.log(new Intl.NumberFormat('bn-BD', { style: 'currency', currency: 'BDT', useGrouping: true }).format(number));
+        // expected output: "1,23,000"
+    </script>
+</body>
+</html>
