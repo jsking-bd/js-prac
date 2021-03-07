@@ -263,3 +263,32 @@ const userData = users.map((item) => {
 
 const keys = Object.keys(users);
 console.log(keys);
+const arrs = ['Imtiaz', 'Khandoker', 'Mohsin']
+const values = Object.values(arrs);
+console.log(values);
+
+for (let i = 0; i <= users.length; i++) {
+    console.log(i);
+}
+
+const fruits = {
+    apple: 28,
+    orange: 17,
+    pear: 54,
+}
+
+const entriesValue = Object.entries(fruits);
+console.log(entriesValue);
+
+// const justKeys = Object.entries(fruits)
+// console.log(justKeys);
+
+// const justKeys = Object.keys(fruits)
+// console.log(justKeys);
+
+// const justKeys = Object.values(fruits)
+// console.log(justKeys);
+
+for (const [fruit, count] of entriesValue) {
+    console.log(`There are ${count} ${fruit}s`)
+}
