@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		JavaScript to add class name
+	</title>
+
+	<style>
+		.addCSS {
+			color: green;
+			font-size: 25px;
+		}
+	</style>
+</head>
+		
+<body style = "text-align:center;">
+	
+	<h1 style = "color:green;" >
+		GeeksForGeeks
+	</h1>
+
+	<p id = "p">
+		A Computer Science portal for Geeks.
+	</p>
+	
+	<button onclick = "addClass()">
+		AddClass
+	</button>
+	
+	<!-- Script to add class name -->		
+	<script>
+		function addClass() {
+			var v = document.getElementById("p");
+			v.className += "addCSS";
+		}
+	</script>
+</body>
+
+</html>					
+				
